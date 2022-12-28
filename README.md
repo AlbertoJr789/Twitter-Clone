@@ -5,7 +5,7 @@ Foi montando um miniframework para este projeto que faz o uso do composer e auto
 
 # Configurando Base de Dados
 
-Os script necessário para o banco de dados se encontra na raiz do projeto "queries.sql", basta rodá-lo em seu SGBD (Estou utilizando MySQL).
+O script necessário para o banco de dados se encontra na raiz do projeto "queries.sql", basta rodá-lo em seu SGBD (Estou utilizando MySQL).
 
 # Inicializando a Aplicação
 
