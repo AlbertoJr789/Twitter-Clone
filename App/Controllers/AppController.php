@@ -16,14 +16,23 @@ class AppController extends Action {
             $tweets = Container::getModel('Tweet');
             //vou pegar tweets somente do usuario logado
             $tweets->__set('id_usuario',$_SESSION['id']);
-            $this->view->tweets = $tweets->getAll();
-
+            
+            $tot_reg_pag = 5;
+            $offset = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $this->view->pagina = $offset;
+            $offset = ($offset - 1) * 5;
+            $this->view->tweets = $tweets->getAll($offset,$tot_reg_pag);
+            
+            
             $user = Container::getModel('Usuario');
             $user->__set('id',$_SESSION['id']);
             $this->view->user = $user->getInfoUsuario();
             $this->view->totalTweets = $user->getTotalTweets();
+            $this->view->totPags = ceil($this->view->totalTweets/5);
             $this->view->totalSeguindo = $user->getTotalSeguindo();
             $this->view->totalSeguidores = $user->getTotalSeguidores();
+
+       
 
             $this->render('timeline');
         }

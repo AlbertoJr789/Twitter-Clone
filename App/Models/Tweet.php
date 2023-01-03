@@ -35,7 +35,7 @@ class Tweet extends Model
         return $this;
     }
 
-    public function getAll()
+    public function getAll($offset, $limit)
     {
 
         $query = "SELECT 
@@ -47,6 +47,10 @@ class Tweet extends Model
             OR t.id_usuario in (select id_usuario_seguindo from usuarios_seguidores WHERE id_usuario = :id_usuario)
         ORDER BY
             t.date desc
+        LIMIT
+            $limit
+        OFFSET
+            $offset
         ";
 
 
@@ -56,4 +60,5 @@ class Tweet extends Model
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 }
