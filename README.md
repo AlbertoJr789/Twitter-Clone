@@ -1,11 +1,11 @@
 # Twitter Clone
 Projeto Web  Básico Front e Back-End Emulando Postagem de Tweets e Follow de Usuários
 
-Foi montando um miniframework para este projeto que faz o uso do composer e autoload psr-4 para carregamento automatico de classes e dependências.
+Foi montando um [miniframework](https://github.com/AlbertoJr789/Miniframework) para este projeto que faz o uso do composer e autoload psr-4 para carregamento automatico de classes e dependências.
 
 # Configurando Base de Dados
 
-Os script necessário para o banco de dados se encontra na raiz do projeto "queries.sql", basta rodá-lo em seu SGBD (Estou utilizando MySQL).
+O script necessário para o banco de dados se encontra na raiz do projeto "queries.sql", basta rodá-lo em seu SGBD (Estou utilizando MySQL).
 
 # Inicializando a Aplicação
 
